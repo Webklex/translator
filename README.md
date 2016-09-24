@@ -61,6 +61,26 @@ You registered the TranslatorBladeServiceProvider you can even use this easy sho
 @t('My translation', 'en')
 ```
 
+If you are using something like my other package `webklex/helpers` you can use a helper function to make the access even easier.
+
+Therefor create a new helper: `php artisan make:helper translator` and edit the `app/Helpers/translator.php`.
+``` php
+if (!function_exists('_t')) {
+
+    /**
+     * Shorthand translation
+     * @param string $string
+     * @param string $locale
+     *
+     * @return string
+     */
+    function _t($string, $locale = null)
+    {
+        return webklex\translator\Facades\TranslatorFacade::get($string, $locale);
+    }
+}
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
