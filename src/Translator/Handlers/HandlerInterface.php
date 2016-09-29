@@ -10,7 +10,7 @@
 *  -
 */
 
-namespace webklex\translator\Handlers;
+namespace Webklex\Translator\Handlers;
 
 interface HandlerInterface
 {

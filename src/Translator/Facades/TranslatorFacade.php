@@ -10,7 +10,7 @@
 *  -
 */
 
-namespace webklex\translator\Facades;
+namespace Webklex\Translator\Facades;
 
 use \Illuminate\Support\Facades\Facade;
 

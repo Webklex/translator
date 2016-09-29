@@ -10,9 +10,9 @@
 *  -
 */
 
-namespace webklex\translator;
+namespace Webklex\Translator;
 
-use webklex\translator\Handlers\HandlerInterface;
+use Webklex\Translator\Handlers\HandlerInterface;
 
 class Translator
 {

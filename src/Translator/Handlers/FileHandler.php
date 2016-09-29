@@ -10,7 +10,7 @@
 *  -
 */
 
-namespace webklex\translator\Handlers;
+namespace Webklex\Translator\Handlers;
 
 use Illuminate\Filesystem\Filesystem;
 

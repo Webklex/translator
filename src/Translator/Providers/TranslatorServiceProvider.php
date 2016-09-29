@@ -10,7 +10,7 @@
 *  -
 */
 
-namespace webklex\translator\Providers;
+namespace Webklex\Translator\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use webklex\translator\Handlers\FileHandlerCSV;
