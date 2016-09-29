@@ -21,8 +21,8 @@ Add the service provider to the providers array in `config/app.php`.
 
 ``` php
 'providers' => [
-    webklex\translator\Providers\TranslatorServiceProvider::class,
-    webklex\translator\Providers\TranslatorBladeServiceProvider::class,
+    Webklex\Translator\Providers\TranslatorServiceProvider::class,
+    Webklex\Translator\Providers\TranslatorBladeServiceProvider::class,
 ];
 ```
 
@@ -31,13 +31,13 @@ Add the service provider to the providers array in `config/app.php`.
 You can publish everything at once
 
 ``` php
-php artisan vendor:publish --provider="webklex\translator\Providers\TranslatorServiceProvider"
+php artisan vendor:publish --provider="Webklex\Translator\Providers\TranslatorServiceProvider"
 ```
 
 or you can publish groups individually.
 
 ``` php
-php artisan vendor:publish --provider="webklex\translator\Providers\TranslatorServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Webklex\Translator\Providers\TranslatorServiceProvider" --tag="config"
 ```
 
 ## Usage
@@ -45,12 +45,12 @@ php artisan vendor:publish --provider="webklex\translator\Providers\TranslatorSe
 This is a translator package provides everything you need to get started with a quiet fast CSV file based translation service.
 Your translation files will be stored by default in `resources/lang/` your language code (e.g. `en`) `/default.csv`.
 
-Access Translator by its Facade (webklex\translator\Facades\TranslatorFacade). 
+Access Translator by its Facade (Webklex\Translator\Facades\TranslatorFacade). 
 Therefor you might want to add an alias to the aliases array within the `config/app.php` file.
 
 ``` php
 'aliases' => [
-    'Lang' => webklex\translator\Facades\TranslatorFacade::class
+    'Lang' => Webklex\Translator\Facades\TranslatorFacade::class
 ];
 ```
 
@@ -76,7 +76,7 @@ if (!function_exists('_t')) {
      */
     function _t($string, $locale = null)
     {
-        return webklex\translator\Facades\TranslatorFacade::get($string, $locale);
+        return Webklex\Translator\Facades\TranslatorFacade::get($string, $locale);
     }
 }
 ```
@@ -104,16 +104,16 @@ If you discover any security related issues, please email info@webklex.com inste
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/webklex/translator.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/Webklex/Translator.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/Webklex/translator/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/webklex/translator.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/webklex/translator.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/webklex/translator.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Webklex/Translator.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/Webklex/Translator.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/Webklex/Translator.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/webklex/translator
-[link-travis]: https://travis-ci.org/webklex/translator
-[link-scrutinizer]: https://scrutinizer-ci.com/g/webklex/translator/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/webklex/translator
-[link-downloads]: https://packagist.org/packages/webklex/translator
+[link-packagist]: https://packagist.org/packages/Webklex/Translator
+[link-travis]: https://travis-ci.org/Webklex/Translator
+[link-scrutinizer]: https://scrutinizer-ci.com/g/Webklex/Translator/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/Webklex/Translator
+[link-downloads]: https://packagist.org/packages/Webklex/Translator
 [link-author]: https://github.com/webklex
