@@ -13,8 +13,8 @@
 namespace Webklex\Translator\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use webklex\translator\Handlers\FileHandlerCSV;
-use webklex\translator\Translator;
+use Webklex\Translator\Handlers\FileHandlerCSV;
+use Webklex\Translator\Translator;
 
 class TranslatorServiceProvider extends ServiceProvider
 {
