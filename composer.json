@@ -1,12 +1,13 @@
 {
     "name": "webklex/translator",
     "type": "library",
-    "description": "generic translator",
+    "description": "Flexible Laravel translator based on .CSV language files",
     "keywords": [
         "webklex",
         "laravel",
         "language",
         "multilang",
+        "csv",
         "translator"
     ],
     "homepage": "https://github.com/webklex/translator",
@@ -14,7 +15,7 @@
     "authors": [
         {
             "name": "Malte Goldenbaum",
-            "email": "info@webklex.com",
+            "email": "github@webklex.com",
             "role": "Developer"
         }
     ],
