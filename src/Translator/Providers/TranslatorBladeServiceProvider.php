@@ -23,7 +23,11 @@ class TranslatorBladeServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('t', function ($expression) {
-            return "<?php echo Webklex\\Translator\\Facades\\TranslatorFacade::get(with{$expression}); ?>";
+            //Backward compatibality test
+            if(substr($expression, 0, 1) == '(') $expression = substr($expression, 1, -1);
+
+            //Translate the given string
+            return "<?php echo Webklex\\Translator\\Facades\\TranslatorFacade::get(with({$expression})); ?>";
         });
     }
 
