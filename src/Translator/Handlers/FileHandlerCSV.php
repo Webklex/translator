@@ -74,7 +74,7 @@ class FileHandlerCSV extends FileHandler
     protected function saveFileData($aLanguage, $filename)
     {
         ksort($aLanguage);
-        $content = "Key;Value;Missing";
+        $content = "Key;Value;Missing\n";
         foreach($aLanguage as $key => $val ) {
             $content .= "{$key};{$val["value"]};{$val["missing"]}\n";
         }
