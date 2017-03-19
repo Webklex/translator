@@ -26,6 +26,6 @@ class TranslatorFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'translator';
+        return 'webklex.translator';
     }
 }

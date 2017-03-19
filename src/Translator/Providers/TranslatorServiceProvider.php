@@ -34,8 +34,8 @@ class TranslatorServiceProvider extends ServiceProvider
     {
         $this->registerLoader();
 
-        $this->app->singleton('translator', function ($app) {
-            return new Translator($app['translator.loader'], $app->getLocale());
+        $this->app->singleton('webklex.translator', function ($app) {
+            return new Translator($app['webklex.translator.loader'], $app->getLocale());
         });
     }
 
@@ -46,7 +46,7 @@ class TranslatorServiceProvider extends ServiceProvider
      */
     protected function registerLoader()
     {
-        $this->app->singleton('translator.loader', function ($app) {
+        $this->app->singleton('webklex.translator.loader', function ($app) {
             return new FileHandlerCSV($app['files'], $app['path.lang']);
         });
     }
@@ -58,6 +58,6 @@ class TranslatorServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['translator', 'translator.loader'];
+        return ['webklex.translator', 'webklex.translator.loader'];
     }
 }
