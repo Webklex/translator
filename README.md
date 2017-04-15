@@ -26,6 +26,45 @@ Add the service provider to the providers array in `config/app.php`.
 ];
 ```
 
+## Middleware
+
+You may want to use the middleware in order to control the global language setup inside `app/Http/Kernel.php`.
+
+``` php
+protected $routeMiddleware = [
+    'translator' => Webklex\Translator\Middleware\TranslatorMiddleware::class,
+];
+```
+
+## Routes and language switching
+
+If you want to change the system language by clicking on a link, you could use something like this:
+
+
+Inside your controller:
+``` php
+/**
+ * Change the current language
+ *
+ * @param string $locale
+ * @return \Illuminate\Http\RedirectResponse
+ */
+public function changeLanguage($locale){
+    if(in_array($locale, config('translator.available'))){
+        Session::put('locale', $locale);
+        Session::save();
+        app()->setLocale($locale);
+    }
+
+    return redirect()->back();
+}
+```
+
+Inside your routing file:
+``` php
+Route::get('/language/{locale}', 'YourControllerName@changeLanguage');
+```
+
 ## Publishing
 
 You can publish everything at once
