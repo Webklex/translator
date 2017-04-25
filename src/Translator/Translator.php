@@ -57,6 +57,9 @@ class Translator implements TranslatorInterface
         $this->locale = $locale;
     }
 
+    /**
+     * Class destructor
+     */
     public function __destruct(){
         foreach($this->languagesChanges as $locale => $language ) {
             $this->load($locale);
@@ -136,6 +139,29 @@ class Translator implements TranslatorInterface
         }
 
         return $this->languages[$locale][$key]["value"];
+    }
+
+    /**
+     * Get all available translations
+     *
+     * @param null $locale
+     *
+     * @return mixed
+     */
+    public function all($locale = null){
+
+        if(!$locale){
+            $locale = $this->getLocale();
+        }
+
+        $this->load($locale);
+
+        $translations = collect([]);
+        foreach($this->languages[$locale] as $key => $arg){
+            $translations->put($key, $arg['value']);
+        }
+
+        return $translations;
     }
 
     /**
